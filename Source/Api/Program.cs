@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace Api
+namespace PoolSkills.Api
 {
     public class Program
     {
