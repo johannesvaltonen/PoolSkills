@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using PoolSkills.Api.Model;
+using PoolSkills.Query;
 
 namespace PoolSkills.Api.Controllers
 {
@@ -22,6 +23,13 @@ namespace PoolSkills.Api.Controllers
         public Player Get(Guid id)
         {
             return new Player { Id = Guid.NewGuid(), Name = "John Doe" };
+        }
+
+        [HttpGet("testvalues")]
+        public IEnumerable<string> Get()
+        {
+            var queryService = new QueryService();
+            return queryService.GetValues();
         }
 
         // POST api/values
