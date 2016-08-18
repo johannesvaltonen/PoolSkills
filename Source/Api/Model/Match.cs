@@ -8,5 +8,6 @@ namespace PoolSkills.Api.Model
         public Player WinningPlayer { get; set; }
         public Player LosingPlayer { get; set; }
         public DateTime PlayedOn { get; set; }
+        public bool IsCleanWin { get; set; }
     }
 }

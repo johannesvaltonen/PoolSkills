@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using PoolSkills.Api.Model;
-using PoolSkills.Query;
+using PoolSkills.Api.Model.Commands;
 
 namespace PoolSkills.Api.Controllers
 {
     [Route("api/players")]
-    public class PlayerController : Controller
+    public class PlayersController : Controller
     {
         [HttpGet]
         public IEnumerable<Player> GetPlayers()
@@ -25,17 +25,10 @@ namespace PoolSkills.Api.Controllers
             return new Player { Id = Guid.NewGuid(), Name = "John Doe" };
         }
 
-        [HttpGet("testvalues")]
-        public IEnumerable<string> Get()
-        {
-            var queryService = new QueryService();
-            return queryService.GetValues();
-        }
-
-        // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public Guid Post([FromBody] CreatePlayerCommand command)
         {
+            return Guid.NewGuid();
         }
     }
 }

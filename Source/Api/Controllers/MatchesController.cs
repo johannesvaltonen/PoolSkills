@@ -7,7 +7,7 @@ using PoolSkills.Api.Model.Commands;
 namespace PoolSkills.Api.Controllers
 {
     [Route("api/matches")]
-    public class MatchController : Controller
+    public class MatchesController : Controller
     {
         [HttpGet]
         public IEnumerable<Match> GetMatches()
@@ -26,8 +26,9 @@ namespace PoolSkills.Api.Controllers
         }
 
         [HttpPost]
-        public void Post([FromBody] CreateMatchCommand command)
+        public Guid Post([FromBody] CreateMatchCommand command)
         {
+            return Guid.NewGuid();
         }
     }
 }
